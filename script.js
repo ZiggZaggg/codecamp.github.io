@@ -40,11 +40,16 @@ $('#left_arrow').click(() => {
 let images = ['Web Images/PMOD.jpg', 'Web Images/Nobu folla.jpg', 'Web Images/original.jpg'];
 
 images.forEach((item, index) => {
-    $('.thumbnail_container').append(`<div class="thumbnail"><img  src="${item}" class="thumbnail_image" data-index="${index}"></div>`);
+    $('.thumbnail_container').append(`<div class="thumbnail"><div class="title_container"><div class="title">${dataImages[index].title}</div></div><img  src="${item}" class="thumbnail_image" data-index="${index}"></div>`);
     $('.thumbnail_image').click(event => {
+
         let indexClicked = $(event.target).attr('data-index');
         loadPhoto(indexClicked);
     });
+
 });
+
+
+
 
 
